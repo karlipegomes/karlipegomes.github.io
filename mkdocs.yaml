@@ -1,9 +1,9 @@
-site_name: Karlipe Gomes
+site_name: Karlipe Gomes Blog's
 nav:
   - Blog:
     - blog/index.md
-  - Articles:
-    - articles/index.md
+  # - Articles:
+  #   - articles/index.md
   #   - articles/index.md
   #   - DefectDojo:
   #       - articles/downdetector/index.md
@@ -98,6 +98,11 @@ plugins:
         as_update: date.updated
   - tags
   # - meta
+
+extra:
+  analytics:
+    provider: google
+    property: G-S8Z38MG7BX
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js
