@@ -1,0 +1,6 @@
+mkdocs
+mkdocs-drawio
+mkdocs-glightbox
+mkdocs-material
+mkdocs-rss-plugin
+pymdown-extensions
