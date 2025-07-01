@@ -1,0 +1,9 @@
+/*all elements on page include header*/
+.md-main__inner.md-grid {
+    max-width: initial;
+}
+
+/*all elements below header*/
+/* .md-grid {
+    max-width: initial;
+} */
