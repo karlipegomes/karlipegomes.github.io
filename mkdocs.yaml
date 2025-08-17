@@ -38,13 +38,13 @@ theme:
     - toc.follow
   language: en
   palette:
-    - scheme: slate
+    - scheme: default
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
       primary: green
       accent: yellow
-    - scheme: default
+    - scheme: slate
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
