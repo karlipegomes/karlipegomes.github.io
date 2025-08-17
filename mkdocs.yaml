@@ -38,18 +38,18 @@ theme:
     - toc.follow
   language: en
   palette:
-    - scheme: default
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
-      primary: green
-      accent: red
     - scheme: slate
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
       primary: green
       accent: yellow
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: green
+      accent: red
 
 markdown_extensions:
   - admonition
