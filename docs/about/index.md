@@ -31,9 +31,9 @@ Aqui compartilho práticas, aprendizados e ideias sobre Automação, DevOps, Clo
 </a>
 
 <a href="https://www.credly.com/users/karlipe-gomes" target="_blank">
-  <img src="https://images.credly.com/size/110x110/images/bec7e2ce-1e8c-4ea4-a05a-cef87abbc76e/blob" width="135" height="135">
-  <img src="https://images.credly.com/size/110x110/images/54036f7e-3877-4822-8581-e6a98ebfbac8/blob" width="135" height="135">
-  <img src="https://images.credly.com/size/110x110/images/82e8df94-e88e-4f3b-b247-8ca5f8a5b6d4/blob" width="135" height="135">
+  <img src="https://images.credly.com/size/680x680/images/82e8df94-e88e-4f3b-b247-8ca5f8a5b6d4/blob" width="135" height="135">
+  <img src="https://images.credly.com/size/680x680/images/54036f7e-3877-4822-8581-e6a98ebfbac8/blob" width="135" height="135">
+  <img src="https://images.credly.com/size/680x680/images/3777170e-7e71-40c0-82e2-2d7e0537cb91/blob" width="135" height="135">
   <img src="https://images.credly.com/size/110x110/images/eb876a27-49d1-4644-a602-abfc74e084f0/CompTIA_Linux_2B.png" width="130" height="130">
   <img src="https://images.credly.com/size/340x340/images/3a331417-6c16-4e68-a89c-4ba939d78b83/blob" width="135" height="135">
 </a>
