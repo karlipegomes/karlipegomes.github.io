@@ -91,6 +91,12 @@ plugins:
           case: lower
       post_slugify_separator: _
       categories: true
+  - social:
+      cache: false
+      cards_layout_dir: layouts
+      cards_layout: custom
+      debug: true
+      debug_color: yellow
   - rss:
       match_path: "blog/posts/.*"
       date_from_meta:
