@@ -3,12 +3,12 @@ site_url: https://karlipegomes.github.io
 nav:
   - Blog:
     - blog/index.md
-  - Articles:
-    - articles/index.md
-    - DefectDojo:
-        - articles/downdetector/index.md
-    - DownDetector:
-        - articles/downdetector/index.md
+  # - Articles:
+  #   - articles/index.md
+  #   - DefectDojo:
+  #       - articles/downdetector/index.md
+  #   - DownDetector:
+  #       - articles/downdetector/index.md
   # - Automations:
   #   - Distroless:
   #     - Melange: distroless/bdc-images/custom-packages.md
