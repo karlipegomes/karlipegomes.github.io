@@ -20,7 +20,6 @@ nav:
 
 theme:
   name: material
-  custom_dir: overrides
   logo: layouts/ccc.png
   favicon: layouts/ccc.png
   features:
@@ -45,14 +44,13 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-      primary: custom
+      primary: "#0CA646"
       accent: yellow
-
     - scheme: default
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-      primary: custom
+      primary: "#0CA646"
       accent: red
 
 markdown_extensions:
