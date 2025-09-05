@@ -2,7 +2,11 @@
 .md-main__inner.md-grid {
     max-width: initial;
 }
-
+:root > * {
+  --md-primary-fg-color:        #0CA646;
+  --md-primary-fg-color--light: #ECB7B7;
+  --md-primary-fg-color--dark:  #90030C;
+}
 /*all elements below header*/
 /* .md-grid {
     max-width: initial;

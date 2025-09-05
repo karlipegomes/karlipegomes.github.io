@@ -3,13 +3,12 @@ site_url: https://karlipegomes.github.io
 nav:
   - Blog:
     - blog/index.md
-  # - Articles:
-  #   - articles/index.md
-  #   - articles/index.md
-  #   - DefectDojo:
-  #       - articles/downdetector/index.md
-  #   - DownDetector:
-  #       - articles/downdetector/index.md
+  - Articles:
+    - articles/index.md
+    - DefectDojo:
+        - articles/downdetector/index.md
+    - DownDetector:
+        - articles/downdetector/index.md
   # - Automations:
   #   - Distroless:
   #     - Melange: distroless/bdc-images/custom-packages.md
@@ -21,6 +20,7 @@ nav:
 
 theme:
   name: material
+  custom_dir: overrides
   logo: layouts/ccc.png
   favicon: layouts/ccc.png
   features:
@@ -41,17 +41,18 @@ theme:
     - toc.follow
   language: en
   palette:
-    - scheme: default
+    - scheme: slate
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-      primary: green
+      primary: custom
       accent: yellow
-    - scheme: slate
+
+    - scheme: default
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-      primary: green
+      primary: custom
       accent: red
 
 markdown_extensions:
@@ -116,14 +117,42 @@ extra:
   analytics:
     provider: google
     property: G-S8Z38MG7BX
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsZ0fviAKuNSlXhF7TO_01BDQ9PH8v2Y1QdX10g2oLlT_D8Q/viewform?embedded=true" width="640" height="577" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>.
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+    actions:
+      - accept
+      - manage
+      - reject
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js
   - https://viewer.diagrams.net/js/viewer-static.min.js
   - https://d3js.org/d3.v6.min.js
-  - z-javascripts/drawio-reload.js
-  - z-javascripts/glightbox.js
+  - stylesheets/drawio-reload.js
+  - stylesheets/feedback.js
+  - stylesheets/glightbox.js
 
 extra_css:
-  - extra.css
+  - stylesheets/extra.css
   - https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css
+
+copyright: Copyright &copy; 2020 - 2025 Karlipe Gomes
