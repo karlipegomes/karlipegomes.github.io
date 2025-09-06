@@ -27,15 +27,15 @@ theme:
     - content.code.annotation
     - content.code.copy
     - content.tabs.link
+    # - navigation.expand
     - navigation.indexes
     - navigation.instant
-    # - navigation.expand
     - navigation.path
     - navigation.sections
-    - navigation.top
     - navigation.tabs
-    - search.suggest
+    - navigation.top
     - search.highlight
+    - search.suggest
     - search.share
     - toc.follow
   language: en
@@ -74,9 +74,10 @@ markdown_extensions:
   - pymdownx.superfences
 
 plugins:
-  - glightbox
   - drawio
+  - glightbox
   - search
+  - tags
   - blog:
       authors: true
       authors_file: "{blog}/.authors.yml"
@@ -84,22 +85,18 @@ plugins:
       blog_dir: blog
       blog_toc: true
       categories: true
-      categories_allowed:
-        - SRE/DevOps
-        - ToolTip
-      post_dir: "{blog}/posts"
       post_date_format: long
-      post_url_format: "{date}/{slug}"
+      post_dir: "{blog}/posts"
       post_slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
       post_slugify_separator: _
+      post_url_format: "{date}/{slug}"
   - rss:
-      match_path: "blog/posts/.*"
       date_from_meta:
         as_creation: date.created
         as_update: date.updated
-  - tags
+      match_path: "blog/posts/.*"
   # - social:
   #     cards_dir: teste
   #     cards_layout_options:
@@ -128,29 +125,29 @@ extra:
           data: 0
           note: >- 
             Thanks for your feedback! Help us improve this page by
-            using our <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsZ0fviAKuNSlXhF7TO_01BDQ9PH8v2Y1QdX10g2oLlT_D8Q/viewform?embedded=true" width="640" height="577" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>.
-  consent:
-    title: Cookie consent
-    description: >- 
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
-    actions:
-      - accept
-      - manage
-      - reject
+            using our: <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsZ0fviAKuNSlXhF7TO_01BDQ9PH8v2Y1QdX10g2oLlT_D8Q/viewform?embedded=true" width="640" height="577" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>.
+  # consent:
+  #   title: Cookie consent
+  #   description: >- 
+  #     We use cookies to recognize your repeated visits and preferences, as well
+  #     as to measure the effectiveness of our documentation and whether users
+  #     find what they're searching for. With your consent, you're helping us to
+  #     make our documentation better.
+  #   actions:
+  #     - accept
+  #     - manage
+  #     - reject
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js
   - https://viewer.diagrams.net/js/viewer-static.min.js
   - https://d3js.org/d3.v6.min.js
-  - stylesheets/drawio-reload.js
-  - stylesheets/feedback.js
-  - stylesheets/glightbox.js
+  - extras/drawio-reload.js
+  - extras/feedback.js
+  - extras/glightbox.js
 
 extra_css:
-  - stylesheets/extra.css
+  - extras/extra.css
   - https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css
 
 copyright: Copyright &copy; 2020 - 2025 Karlipe Gomes
