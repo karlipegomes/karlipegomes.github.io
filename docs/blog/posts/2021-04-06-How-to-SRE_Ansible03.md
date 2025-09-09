@@ -1,8 +1,7 @@
 ---
 authors:
   - karlipe
-date:
-    created: 2021-04-06
+date: 2021-04-06
 categories:
     - SRE/DevOps
 tags:

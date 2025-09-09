@@ -20,6 +20,7 @@ nav:
 
 theme:
   name: material
+  custom_dir: overrides
   logo: layouts/ccc.png
   favicon: layouts/ccc.png
   features:
@@ -92,40 +93,32 @@ plugins:
           case: lower
       post_slugify_separator: _
       post_url_format: "{date}/{slug}"
+  - meta:
+      meta_file: .meta.yml
   - rss:
       date_from_meta:
         as_creation: date.created
         as_update: date.updated
       match_path: "blog/posts/.*"
-  # - social:
-  #     cards_dir: teste
-  #     cards_layout_options:
-  #       background_image: layouts/cl_bg.png
-  #       background_color: black
-  #       # color: "#0CA749"
-  #       # color: "#87FC32"
-  #       font_family: Ubuntu
-  # - meta:
-  #     meta_file: .meta.yml
 
 extra:
   analytics:
     provider: google
     property: G-S8Z38MG7BX
-    feedback:
-      title: Was this page helpful?
-      ratings:
-        - icon: material/emoticon-happy-outline
-          name: This page was helpful
-          data: 1
-          note: >-
-            Thanks for your feedback!
-        - icon: material/emoticon-sad-outline
-          name: This page could be improved
-          data: 0
-          note: >- 
-            Thanks for your feedback! Help us improve this page by
-            using our: <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsZ0fviAKuNSlXhF7TO_01BDQ9PH8v2Y1QdX10g2oLlT_D8Q/viewform?embedded=true" width="640" height="577" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>.
+  #   feedback:
+  #     title: Was this page helpful?
+  #     ratings:
+  #       - icon: material/emoticon-happy-outline
+  #         name: This page was helpful
+  #         data: 1
+  #         note: >-
+  #           Thanks for your feedback!
+  #       - icon: material/emoticon-sad-outline
+  #         name: This page could be improved
+  #         data: 0
+  #         note: >- 
+  #           Thanks for your feedback! Help us improve this page by
+  #           using our: <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsZ0fviAKuNSlXhF7TO_01BDQ9PH8v2Y1QdX10g2oLlT_D8Q/viewform?embedded=true" width="640" height="577" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>.
   # consent:
   #   title: Cookie consent
   #   description: >- 
