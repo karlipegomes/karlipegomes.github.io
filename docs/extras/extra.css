@@ -1,13 +1,25 @@
+/*-------------------------*/
 /*all elements on page include header*/
 .md-main__inner.md-grid {
     max-width: initial;
-}
-:root > * {
-  --md-primary-fg-color:        #0CA646;
-  --md-primary-fg-color--light: #ECB7B7;
-  --md-primary-fg-color--dark:  #90030C;
 }
 /*all elements below header*/
 /* .md-grid {
     max-width: initial;
 } */
+
+/*-------------------------*/
+/*color as defined on theme*/
+:root > * {
+  --md-primary-fg-color:        #0CA646;
+  --md-primary-fg-color--light: #ECB7B7;
+  --md-primary-fg-color--dark:  #90030C;
+}
+
+/*-------------------------*/
+/* md extension admonition*/
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+  border-left-width: 4px;
+}

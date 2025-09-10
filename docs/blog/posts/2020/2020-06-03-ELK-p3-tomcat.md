@@ -13,7 +13,7 @@ tags:
 # **#ToolTip - ELK Stack - Part3(Tomcat)**
 
 <figure markdown="span">
-  ![](../old-imgs/elk-p3-tomcat/elk-p3.png)
+  ![](../../old-imgs/elk-p3-tomcat/elk-p3.png)
 </figure>
 
 Continuando os estudos e utilizações sobre o ELK, segue uma utilização geralmente utilizada no monitoramento de aplicações Tomcat:

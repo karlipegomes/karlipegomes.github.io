@@ -12,7 +12,7 @@ tags:
 # **#ToolTip - ELK Stack - Part4(Command Monitoring)**
 
 <figure markdown="span">
-  ![](../old-imgs/elk-p4-commands/elk-p4.png)
+  ![](../../old-imgs/elk-p4-commands/elk-p4.png)
 </figure>
 
 

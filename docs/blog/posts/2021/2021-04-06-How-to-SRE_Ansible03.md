@@ -12,7 +12,7 @@ tags:
 # **#HowToSRE - Ansible-Parte03**
 
 <figure markdown="span">
-  ![](../old-imgs/how-to-sre-ansible-03/TN_HowToSRE_Ansible03.png)
+  ![](../../old-imgs/how-to-sre-ansible-03/TN_HowToSRE_Ansible03.png)
 </figure>
 
 
@@ -61,7 +61,7 @@ host2.example.com | SUCCESS => {
 ### Desabilitando Gathering Facts
 Caso você não tenha notado nos vídeos dos repasses anteriores, sempre ao início de cada execução dos playbooks, este função é realizada a fim de colher informações que talvez sejam necessárias para a execução correta do Playbook.
 
-![Gathering Facts1](../old-imgs/how-to-sre-ansible-03/ansible03-01.png)
+![Gathering Facts1](../../old-imgs/how-to-sre-ansible-03/ansible03-01.png)
 
 Uma **boa prática** importante, caso você não a necessidade de usar essas informações e/ou caso você tenha um grande grupo de máquinas para executar, o que pode causar uma certa lentidão no ambiente, o indicado é desabilitar esta opção dentro do playbook, da seguinte forma:
 
@@ -74,7 +74,7 @@ $ vim motd.yml
   ...
 ```
 
-![Gathering Facts2](../old-imgs/how-to-sre-ansible-03/ansible03-02.png)
+![Gathering Facts2](../../old-imgs/how-to-sre-ansible-03/ansible03-02.png)
 
 <br/><br/>
 
@@ -127,7 +127,7 @@ Um exemplo básico de utilização de Facts no playbook é conforme o exemplo ab
 ```
 {% endraw %}
 
-![Facts_Playbook01](../old-imgs/how-to-sre-ansible-03/ansible03-03.png)
+![Facts_Playbook01](../../old-imgs/how-to-sre-ansible-03/ansible03-03.png)
 
 Outra forma igualmente elegante é utilizar custom facts, com base no exemplo citado mais acima veja como é simples de instalar um pacote.
 {% raw %}
@@ -223,7 +223,7 @@ $ ansible-vault edit --vault-password-file=senha-vault.txt arquivo.yml
 
 Supondo que o arquivo de variaveis do grupo esteja criptografado "**/group_vars/linux**", e você queira instalar um pacote "httpd" definido no mesmo. Ao tentar executar o Playbook você irá se depará com a seguinte tela.
 
-![ansible-vault01](../old-imgs/how-to-sre-ansible-03/ansible03-04.png)
+![ansible-vault01](../../old-imgs/how-to-sre-ansible-03/ansible03-04.png)
 
 No erro informa que não foi encontrado "vault secrets" para decriptar o Playbook. Em outras palavras é necessário que você passe o secret para o Playbook e há duas formas simples de fazer isso.
 

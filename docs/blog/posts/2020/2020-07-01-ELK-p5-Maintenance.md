@@ -13,7 +13,7 @@ tags:
 # **#ToolTip - ELK Stack - Log Maintenance**
 
 <figure markdown="span">
-  ![](../old-imgs/elk-p5-maintenance/elk-p5.png)
+  ![](../../old-imgs/elk-p5-maintenance/elk-p5.png)
 </figure>
 
 Se você usa a ferramenta ELK (versão community) sabe que tem algumas limitações, principalmente no quesito manutenção/administração.

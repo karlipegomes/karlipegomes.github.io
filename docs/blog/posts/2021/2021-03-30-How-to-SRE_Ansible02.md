@@ -13,7 +13,7 @@ tags:
 # **#HowToSRE - Ansible-Parte02**
 
 <figure markdown="span">
-  ![](../old-imgs/how-to-sre-ansible-02/TN_HowToSRE_Ansible02.png)
+  ![](../../old-imgs/how-to-sre-ansible-02/TN_HowToSRE_Ansible02.png)
 </figure>
 
 ## Playbooks Advanced
@@ -176,7 +176,7 @@ $ vim motd.yml
 
 Caso você queira generalizar para todos os playbooks dos seus projetos é possivel adicionalo ao arquivo de configuração "**ansible.cfg**".
 
-![Force Handlers](../old-imgs/how-to-sre-ansible-02/ansible02-01.png)
+![Force Handlers](../../old-imgs/how-to-sre-ansible-02/ansible02-01.png)
 <br/><br/>
 
 

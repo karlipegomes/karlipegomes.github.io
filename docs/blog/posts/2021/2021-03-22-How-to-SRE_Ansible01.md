@@ -12,7 +12,7 @@ tags:
 # **#HowToSRE - Ansible-Parte01**
 
 <figure markdown="span">
-  ![](../old-imgs/how-to-sre-ansible-01/TN_HowToSRE_Ansible01.png)
+  ![](../../old-imgs/how-to-sre-ansible-01/TN_HowToSRE_Ansible01.png)
 </figure>
 
 ### Pre-requisitos e Orientações
@@ -23,7 +23,7 @@ Segue abaixo um desenho de como se espera que esteja montado.
 
 <!-- more -->
 
-![Desenho do ambiente](../old-imgs/how-to-sre-ansible-01/AnsibleDiagram.png)
+![Desenho do ambiente](../../old-imgs/how-to-sre-ansible-01/AnsibleDiagram.png)
 
 Quanto ao endereçamento IP, você pode se sentir livre para definir qual utilizar, desde que todas as VMs tenham **acesso a internet** para realizar o download e instalação de pacotes. Todas as VMs utilizadas nesse lab serão ***CentOS***. Caso seja necessário adicione no "/etc/hosts" os endereços dos hosts.
 <br/><br/>
@@ -60,7 +60,7 @@ yum install ansible
 ansible --version
 ```
 
-![Ansible Version](../old-imgs/how-to-sre-ansible-01/ansible01-01.png)
+![Ansible Version](../../old-imgs/how-to-sre-ansible-01/ansible01-01.png)
 
 Dois dos arquivos mais importantes de toda configuração do ansible são "**ansible.cfg**" e "**inventory**", onde ficam salvos e armazenados todas as configurações e a lista de inventário de hosts, respectivamente.
 <br/><br/>
@@ -69,21 +69,21 @@ Dois dos arquivos mais importantes de toda configuração do ansible são "**ans
 
 Como pode ser visto no print anterior o diretório padrão é "**/etc/ansible/ansible.cfg**". Mas quando se administra vários tipos de ambientes, e/ou quando o ***control-node*** é acessado por mais de um administrador as vezes é necessário realizar alterações neste arquivo para que se encaixe na configuração para cada usuário. Neste caso é indicado que cada usuário tenha um arquivo de configuração em sua home, ex: "**~/.ansible.cfg**". Observe no print abaixo que a localização do arquivo de configuração foi alterado.
 
-![Ansible ConfigFile2](../old-imgs/how-to-sre-ansible-01/ansible01-02.png)
+![Ansible ConfigFile2](../../old-imgs/how-to-sre-ansible-01/ansible01-02.png)
 
 Mas caso mesmo assim seja interessante que em cada projeto tenha configurações diferenciadas para atender demandas específicas, é possivel ainda que cada projeto tenha o seu proprio arquivo de configuração, bastando adicionar o arquivo na raiz do seu projeto, onde pretende executar os playbooks, conforme abaixo:
-![Ansible ConfigFile2](../old-imgs/how-to-sre-ansible-01/ansible01-03.png)
+![Ansible ConfigFile2](../../old-imgs/how-to-sre-ansible-01/ansible01-03.png)
 <br/><br/>
 
 ### inventory
 
 O arquivo de inventário defaul do ansible tem o caminho "**/etc/ansible/hosts**", mas já que iremos realizar vários projetos contendo arquivos "**ansible.cfg**" diferentes, vamos definir um arquivo de configuração que será utilizado por todos através da variável "*inventory*", conforme exemplo abaixo:
 
-![Ansible InventoryFile](../old-imgs/how-to-sre-ansible-01/ansible01-04.png)
+![Ansible InventoryFile](../../old-imgs/how-to-sre-ansible-01/ansible01-04.png)
 
 Definiremos então um grupo chamado **linux**, contendo o FQDN do primeiro host que iremos testar.
 
-![Ansible Inventory](../old-imgs/how-to-sre-ansible-01/ansible01-05.png)
+![Ansible Inventory](../../old-imgs/how-to-sre-ansible-01/ansible01-05.png)
 
 Os inventários podem ser de dois tipos estático, definido fixamente através do arquivo acima, e dinâmico que fazendo a utilização de módulos, pode se conectar em clouds, service providers e virtualizadores e colher as informações necessárias.
 
@@ -147,11 +147,11 @@ host1.example.com | SUCCESS => {
 
 Podemos testar o conteudo do arquivo /etc/motd, do servidor host1. Como não está exibindo nada, o arquivo está vazio.
 
-![motd01](../old-imgs/how-to-sre-ansible-01/ansible01-06.png)
+![motd01](../../old-imgs/how-to-sre-ansible-01/ansible01-06.png)
 
 Ao utilizarmos o módulo *copy*, e os argumentos *content* para definir o conteúdo e *dest*, para definir o arquivo de destino. O binário do Ansible, já nos mostra que o arquivo foi alterado e assim ainda informa algumas informações sobre o mesmo.
 
-![motd02](../old-imgs/how-to-sre-ansible-01/ansible01-07.png)
+![motd02](../../old-imgs/how-to-sre-ansible-01/ansible01-07.png)
 
 E como pode ser notado, agora o arquivo tem o conteúdo indicado.
 <br/><br/>
@@ -185,7 +185,7 @@ ansible-doc copy
 **DICA:**
 Ao entrar na documentação completa do módulo você pode pesquisar por "EXAMPLES", onde será exibido vários exemplos de configuração e como utilizar de forma correta o módulo.
 
-![motd02](../old-imgs/how-to-sre-ansible-01/ansible01-08.png)
+![motd02](../../old-imgs/how-to-sre-ansible-01/ansible01-08.png)
 <br/><br/>
 
 ## Ansible Playbook
