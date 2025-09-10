@@ -86,6 +86,7 @@ plugins:
       blog_dir: blog
       blog_toc: true
       categories: true
+      draft_if_future_date: true
       post_date_format: long
       post_dir: "{blog}/posts"
       post_slugify: !!python/object/apply:pymdownx.slugs.slugify
