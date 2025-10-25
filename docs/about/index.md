@@ -14,6 +14,10 @@ Aqui compartilho práticas, aprendizados e ideias sobre Automação, DevOps, Clo
 **Certifications:**
 
 <a href="https://www.credly.com/users/karlipe-gomes" target="_blank">
+  <img src="https://images.credly.com/images/cc8adc83-1dc6-4d57-8e20-22171247e052/blob" width="135" height="135">
+</a>
+
+<a href="https://www.credly.com/users/karlipe-gomes" target="_blank">
   <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" width="135" height="135">
   <img src="https://images.credly.com/images/b870667f-00a3-48d7-b988-9c02b441b883/image.png" width="135" height="135">
 </a>

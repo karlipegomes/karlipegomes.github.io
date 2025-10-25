@@ -3,18 +3,21 @@ site_url: https://karlipegomes.github.io
 nav:
   - Blog:
     - blog/index.md
-  # - Articles:
-  #   - articles/index.md
-  #   - DefectDojo:
-  #       - articles/downdetector/index.md
-  #   - DownDetector:
-  #       - articles/downdetector/index.md
-  # - Automations:
-  #   - Distroless:
+  # - HomeLab:
+  #   - Environment:
+  #     - Module-ESC-Cluster: distroless/bdc-images/custom-packages.md
+  #   - Helm-Charts:
+  #     - Module: distroless/bdc-images/custom-packages.md
+  # - Projects:
+  #   - ScoreCardAPI:
+  #     - CreatingMetrics': projects/scorecard/metrics.md
+  #   - KumaAPI-Operator:
+  #     - Motivation: projects/kumaapi/motivation.md
+  #     - Motivation: projects/kumaapi/motivation.md
+  #   - Module-ESC-Cluster:
   #     - Melange: distroless/bdc-images/custom-packages.md
-  #     - APKO: distroless/bdc-images/custom-images.md
-  #     - OpenVEX: distroless/bdc-images/openvex.md
-  #     - Pipeline: 
+  #   - Module-ESC-Service:
+  #     - Melange: distroless/bdc-images/custom-packages.md
   - About:
     - about/index.md
 
