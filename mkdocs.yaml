@@ -1,3 +1,4 @@
+site_description: DevOps tips and useful knowledge
 site_name: Karlipe Gomes
 site_url: https://karlipegomes.github.io
 nav:
@@ -11,9 +12,6 @@ nav:
   # - Projects:
   #   - ScoreCardAPI:
   #     - CreatingMetrics': projects/scorecard/metrics.md
-  #   - KumaAPI-Operator:
-  #     - Motivation: projects/kumaapi/motivation.md
-  #     - Motivation: projects/kumaapi/motivation.md
   #   - Module-ESC-Cluster:
   #     - Melange: distroless/bdc-images/custom-packages.md
   #   - Module-ESC-Service:
@@ -147,4 +145,4 @@ extra_css:
   - extras/extra.css
   - https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css
 
-copyright: Copyright &copy; 2020 - 2025 Karlipe Gomes
+copyright: Copyright &copy; 2020 - 2026 Karlipe Gomes
