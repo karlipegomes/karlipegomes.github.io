@@ -2,7 +2,8 @@
 authors:
   - karlipe
 date:
-    created: 2020-05-29
+  created: 2020-05-29
+  updated: 2020-05-29
 ---
 # **Alterando o nome das interfaces de rede RHEL/CentOS 7**
 

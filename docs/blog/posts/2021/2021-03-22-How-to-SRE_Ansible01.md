@@ -2,11 +2,12 @@
 authors:
   - karlipe
 date:
-    created: 2021-03-22
+  created: 2021-03-22
+  updated: 2021-03-22
 categories:
-    - SRE/DevOps
+  - SRE/DevOps
 tags:
-    - ansible
+  - ansible
 ---
 
 # **#HowToSRE - Ansible-Parte01**

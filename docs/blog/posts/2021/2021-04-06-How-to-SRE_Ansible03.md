@@ -2,11 +2,12 @@
 authors:
   - karlipe
 date:
-    created: 2021-04-06
+  created: 2021-04-06
+  updated: 2021-04-06
 categories:
-    - SRE/DevOps
+  - SRE/DevOps
 tags:
-    - ansible
+  - ansible
 ---
 
 
