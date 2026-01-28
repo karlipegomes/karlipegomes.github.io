@@ -98,10 +98,18 @@ plugins:
   - meta:
       meta_file: .meta.yml
   - rss:
+      abstract_delimiter: <!-- more -->
+      feeds_filenames:
+        json_created: feed.json
+        json_updated: feed.json
+        rss_created: atom.xml
+        rss_updated: rss.xml
       date_from_meta:
         as_creation: date.created
         as_update: date.updated
       match_path: "blog/posts/.*"
+      use_material_blog: true
+      image: https://github.com/Guts/mkdocs-rss-plugin/blob/main/docs/assets/logo_rss_plugin_mkdocs.png?raw=true
 
 extra:
   analytics:
