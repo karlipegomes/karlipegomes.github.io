@@ -5,7 +5,7 @@
   ![](https://avatars.githubusercontent.com/u/8519235)
 </figure>
 
-Especialista em DevOps com mais de 15 anos de experiência em automação, padronização e otimização de ambientes em nuvem. Trabalho com foco em infraestrutura como código e automações. Gerenciando pipelines CI/CD, promovendo autonomia para os times de desenvolvimento, sempre com atenção à governança, segurança e custo, seguindo princípios de boas práticas. 
+Especialista em DevOps com mais de 16 anos de experiência em automação, padronização e otimização de ambientes em nuvem. Trabalho com foco em infraestrutura como código e automações. Gerenciando pipelines CI/CD, promovendo autonomia para os times de desenvolvimento, sempre com atenção à governança, segurança e custo, seguindo princípios de boas práticas. 
 
 Yoga Buddy, Linux Fanboy, Mexican Food Chef, PsyTrance Vibes.. PLUR is the answer.. 
 
@@ -13,9 +13,12 @@ Aqui compartilho práticas, aprendizados e ideias sobre Automação, DevOps, Clo
 
 **Certifications:**
 
+
 <a href="https://www.credly.com/users/karlipe-gomes" target="_blank">
-  <img src="https://images.credly.com/size/680x680/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png" width="135" height="135">
-  <img src="https://images.credly.com/images/cc8adc83-1dc6-4d57-8e20-22171247e052/blob" width="134" height="134">
+  <img src="https://images.credly.com/size/680x680/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png" width="136" height="136">
+  <img src="https://images.credly.com/images/cc8adc83-1dc6-4d57-8e20-22171247e052/blob" width="132" height="132">
+  <img src="https://images.credly.com/size/680x680/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/KCNA_badge.png" width="130" height="130">
+  <img src="https://images.credly.com/images/67dd8a95-8876-4051-9cb9-3d97c204f85a/image.png" width="125" height="125">
 </a>
 
 <a href="https://www.credly.com/users/karlipe-gomes" target="_blank">
