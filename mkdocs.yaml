@@ -110,6 +110,12 @@ plugins:
       post_url_format: "{date}/{slug}"
       post_readtime: true
       post_readtime_words_per_minute: 200
+  - redirects:
+      redirect_maps:
+        # O post do Melange mudou de URL quando os slugs passaram a remover
+        # acentos (normalize: NFKD). A URL antiga estava indexada e no RSS.
+        "blog/2025/09/10/melange_criando_seus_próprios_pacotes_apk.md":
+          "blog/posts/2025/2025-09-10-Melange.md"
   - meta:
       meta_file: .meta.yml
   - rss:

@@ -5,6 +5,7 @@ mkdocs
 mkdocs-drawio
 mkdocs-glightbox
 mkdocs-material[imaging]
+mkdocs-redirects
 mkdocs-rss-plugin
 pymdown-extensions
 
