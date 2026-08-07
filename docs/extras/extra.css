@@ -1,25 +1,435 @@
-/*-------------------------*/
-/*all elements on page include header*/
-.md-main__inner.md-grid {
-    max-width: initial;
-}
-/*all elements below header*/
-/* .md-grid {
-    max-width: initial;
-} */
+/* ═══════════════════════════════════════════════════════════════════════
+   karlipegomes.github.io — sistema de tokens
+   Verde da logo (#0CA646) como marca/ação, lilás (#A78BFA) como sequência
+   e tempo: 113° de separação de matiz para os dois papéis não se
+   confundirem. Fundo violeta-escuro, não verde-escuro — é o que separa
+   este blog do staffops.github.io, que compartilha a cor de marca.
+   Contrastes verificados em AA nos dois esquemas.
+   ═══════════════════════════════════════════════════════════════════════ */
 
-/*-------------------------*/
-/* cor primária custom (theme.palette.primary: custom) */
+/* ─── Tokens ─────────────────────────────────────────────────────────── */
+[data-md-color-scheme="slate"] {
+  --k-bg:      #0B0A12;
+  --k-surf:    #151327;
+  --k-surf2:   #1D1A33;
+  --k-ac:      #0CA646;  /* verde da logo — preenchimentos e marca  6.15:1 */
+  --k-ac-lit:  #19C25C;  /* variante clara p/ fios finos e texto miúdo 8.36:1 */
+  --k-seq:     #A78BFA;  /* lilás — sequência e tempo               7.24:1 */
+  --k-tx:      #CFC9E6;  /* 12.33:1 */
+  --k-dim:     #8F87AD;  /* 5.40:1 sobre superfície (pior caso) */
+  --k-line:    rgba(207, 201, 230, .12);
+  --k-on-ac:   #06140B;  /* texto sobre preenchimento verde  5.89:1 */
+
+  --md-default-bg-color:          var(--k-bg);
+  --md-default-bg-color--light:   var(--k-surf);
+  --md-default-bg-color--lighter: var(--k-surf2);
+  --md-default-fg-color:          var(--k-tx);
+  --md-default-fg-color--light:   var(--k-dim);
+  --md-default-fg-color--lighter: var(--k-dim);
+  --md-code-bg-color:             var(--k-surf);
+  --md-code-fg-color:             var(--k-tx);
+  --md-typeset-a-color:           var(--k-ac-lit);
+}
+
+[data-md-color-scheme="default"] {
+  --k-bg:      #FBFAFF;
+  --k-surf:    #F2EFF9;
+  --k-surf2:   #E7E2F2;
+  --k-ac:      #0A8038;  /* 4.86:1 */
+  --k-ac-lit:  #087A34;  /* 5.26:1 */
+  --k-seq:     #6D4FD8;  /* 5.38:1 */
+  --k-tx:      #241F38;  /* 15.22:1 */
+  --k-dim:     #5C5478;  /* 6.75:1 */
+  --k-line:    rgba(36, 31, 56, .13);
+  --k-on-ac:   #FFFFFF;  /* 5.05:1 */
+
+  --md-default-bg-color:          var(--k-bg);
+  --md-default-bg-color--light:   var(--k-surf);
+  --md-default-bg-color--lighter: var(--k-surf2);
+  --md-default-fg-color:          var(--k-tx);
+  --md-default-fg-color--light:   var(--k-dim);
+  --md-code-bg-color:             var(--k-surf);
+  --md-typeset-a-color:           var(--k-ac-lit);
+}
+
 [data-md-color-primary="custom"] {
-  --md-primary-fg-color:        #0CA646;
-  --md-primary-fg-color--light: #3DBF6B;
-  --md-primary-fg-color--dark:  #087A34;
+  --md-primary-fg-color:        var(--k-ac);
+  --md-primary-fg-color--light: var(--k-ac-lit);
+  --md-primary-fg-color--dark:  var(--k-ac);
+  --md-primary-bg-color:        var(--k-tx);
+}
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: var(--k-seq);
 }
 
-/*-------------------------*/
-/* md extension admonition*/
+/* ─── Tipografia ─────────────────────────────────────────────────────── */
+body,
+input, select, textarea {
+  font-family: 'Public Sans', system-ui, -apple-system, sans-serif;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: 'Syne', system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+.md-typeset h1 { color: var(--k-tx); line-height: 1.08; }
+.md-typeset h2 {
+  border-left: 3px solid var(--k-ac);
+  padding-left: .75rem;
+  margin-top: 2.4em;
+}
+.md-typeset h4, .md-typeset h5, .md-typeset h6 { font-weight: 600; }
+
+.md-typeset code,
+.md-typeset kbd,
+.md-typeset pre {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-feature-settings: normal;
+}
+.md-typeset :not(pre) > code {
+  color: var(--k-ac-lit);
+  background: color-mix(in srgb, var(--k-ac) 12%, transparent);
+  border-radius: 4px;
+}
+
+.md-typeset a { text-decoration-thickness: 1px; text-underline-offset: .2em; }
+
+/* ─── Cabeçalho e navegação ──────────────────────────────────────────── */
+.md-header {
+  background: var(--k-bg);
+  border-bottom: 1px solid var(--k-line);
+  box-shadow: none;
+}
+.md-header__title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  letter-spacing: -.015em;
+}
+.md-header__button.md-logo img { width: 26px; height: 26px; }
+
+.md-tabs {
+  background: var(--k-bg);
+  border-bottom: 1px solid var(--k-line);
+}
+.md-tabs__link {
+  font-size: .76rem;
+  letter-spacing: .02em;
+  opacity: 1;
+  color: var(--k-dim);
+}
+.md-tabs__link:hover,
+.md-tabs__link--active { color: var(--k-ac-lit); }
+
+.md-search__form {
+  background: var(--k-surf);
+  border: 1px solid var(--k-line);
+  border-radius: 8px;
+}
+.md-search__form:hover { background: var(--k-surf2); }
+
+.md-nav__link--active,
+.md-nav__link:focus,
+.md-nav__link:hover { color: var(--k-ac-lit); }
+.md-nav__title { font-weight: 600; }
+
+/* ─── Conteúdo ───────────────────────────────────────────────────────── */
+.md-typeset table:not([class]) th {
+  background: color-mix(in srgb, var(--k-ac) 10%, transparent);
+  color: var(--k-ac-lit);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.md-typeset table:not([class]) td { border-color: var(--k-line); }
+
 .md-typeset .admonition,
 .md-typeset details {
   border-width: 0;
-  border-left-width: 4px;
+  border-left-width: 3px;
+  border-radius: 6px;
+  background: var(--k-surf);
+}
+
+.md-typeset figure img { border-radius: 10px; }
+.md-typeset figcaption {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem;
+  color: var(--k-dim);
+}
+
+.md-footer,
+.md-footer-meta { background: var(--k-bg); }
+.md-footer { border-top: 1px solid var(--k-line); }
+
+/* foco visível — Material esconde em alguns componentes */
+:focus-visible { outline: 2px solid var(--k-seq); outline-offset: 2px; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   COMPONENTES
+
+   Todos vivem dentro de .md-content__inner.md-typeset, então o prefixo
+   .md-typeset não é enfeite: sem ele, `.md-typeset ul` (0,1,1) vence
+   `.k-posts` (0,1,0) e derruba o display:grid, e `.md-typeset a` sequestra
+   a cor dos botões. Mantenha o prefixo ao adicionar regras aqui.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ─── Índice em cards ────────────────────────────────────────────────── */
+/* O Material aplica `display:flow-root` via `.md-typeset ul:not([hidden])`,
+   que tem especificidade (0,2,1) e derruba um `.md-typeset .k-posts` (0,2,0).
+   Repetir o :not([hidden]) sobe para (0,3,0) e vence sem depender de ordem. */
+.md-typeset ul.k-posts:not([hidden]) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.1rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+/* zera o margin-left que vem de `[dir=ltr] .md-typeset ul li` (0,3,1) */
+[dir="ltr"] .md-typeset .k-posts > li,
+[dir="rtl"] .md-typeset .k-posts > li { margin: 0; }
+
+.md-typeset .k-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--k-surf);
+  border: 1px solid var(--k-line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color .18s, transform .18s;
+}
+.md-typeset .k-card:hover {
+  border-color: var(--k-ac);
+  transform: translateY(-3px);
+}
+
+.md-typeset .k-card__thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  /* o acervo 2020–21 é bem mais saturado que o de 2025; segura a grade
+     unificada e devolve a cor no hover */
+  filter: saturate(.72) contrast(1.03);
+  transition: filter .18s;
+}
+.md-typeset .k-card:hover .k-card__thumb { filter: none; }
+
+.md-typeset .k-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  padding: 1rem 1.1rem 1.15rem;
+  flex: 1;
+}
+.md-typeset .k-card__meta {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  color: var(--k-dim);
+  font-variant-numeric: tabular-nums;
+}
+.md-typeset .k-card__meta .k-sep { color: var(--k-seq); padding: 0 .2rem; }
+
+.md-typeset .k-card__title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: .98rem;
+  line-height: 1.22;
+  margin: 0;
+  text-wrap: balance;
+}
+.md-typeset .k-card__title a { color: var(--k-tx); text-decoration: none; }
+.md-typeset .k-card:hover .k-card__title a { color: var(--k-ac-lit); }
+
+.md-typeset .k-card__tags {
+  display: flex;
+  gap: .3rem;
+  flex-wrap: wrap;
+  margin: auto 0 0;
+  padding-top: .35rem;
+}
+.md-typeset .k-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .63rem;
+  color: var(--k-dim);
+  border: 1px solid var(--k-line);
+  border-radius: 4px;
+  padding: .1rem .4rem;
+}
+
+/* ─── Séries ─────────────────────────────────────────────────────────────
+   A numeração aqui é informação: estes posts são sequência de verdade.  */
+.md-typeset .k-serie {
+  background: var(--k-surf);
+  border: 1px solid var(--k-line);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1rem;
+}
+.md-typeset .k-serie__hd {
+  display: flex;
+  align-items: baseline;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin-bottom: .9rem;
+}
+.md-typeset .k-serie__hd h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin: 0;
+}
+.md-typeset .k-serie__count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .66rem;
+  color: var(--k-seq);
+  border: 1px solid color-mix(in srgb, var(--k-seq) 40%, transparent);
+  border-radius: 999px;
+  padding: .1rem .5rem;
+}
+
+.md-typeset ol.k-steps:not([hidden]) {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+[dir="ltr"] .md-typeset .k-steps > li,
+[dir="rtl"] .md-typeset .k-steps > li {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr auto;
+  align-items: center;
+  gap: .8rem;
+  margin: 0;
+  padding: .5rem 0;
+  border-top: 1px solid var(--k-line);
+}
+[dir="ltr"] .md-typeset .k-steps > li:first-child,
+[dir="rtl"] .md-typeset .k-steps > li:first-child { border-top: 0; }
+.md-typeset .k-steps__n {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  color: var(--k-seq);
+  font-variant-numeric: tabular-nums;
+}
+.md-typeset .k-steps a {
+  color: var(--k-tx);
+  text-decoration: none;
+  font-size: .9rem;
+}
+.md-typeset .k-steps a:hover { color: var(--k-ac-lit); }
+.md-typeset .k-steps__t {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  color: var(--k-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Home ───────────────────────────────────────────────────────────── */
+.md-typeset .k-home { max-width: 60rem; margin: 0 auto; }
+
+.md-typeset .k-hero {
+  position: relative;
+  padding: 3.5rem 0 3rem;
+  overflow: hidden;
+}
+.md-typeset .k-hero__mesh {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+.md-typeset .k-hero__in { position: relative; max-width: 40rem; }
+
+.md-typeset .k-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--k-seq);
+  margin: 0 0 1rem;
+}
+.md-typeset .k-hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  /* Syne 800 é largo: com mínimo de 2.1rem, "Automação," não cabe em 375px
+     e quebra no meio da palavra. O mínimo menor deixa a palavra inteira. */
+  font-size: clamp(1.5rem, 6.5vw, 3.4rem);
+  line-height: 1.02;
+  letter-spacing: -.035em;
+  margin: 0 0 1.1rem;
+  text-wrap: balance;
+}
+.md-typeset .k-hero h1 em { font-style: normal; color: var(--k-ac-lit); }
+.md-typeset .k-hero__lead {
+  font-size: 1.02rem;
+  color: var(--k-dim);
+  margin: 0 0 1.8rem;
+  max-width: 34rem;
+}
+
+.md-typeset .k-cta { display: flex; gap: .7rem; flex-wrap: wrap; }
+.md-typeset .k-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .78rem;
+  font-weight: 700;
+  padding: .62rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+.md-typeset .k-btn--fill { background: var(--k-ac); color: var(--k-on-ac); }
+.md-typeset .k-btn--fill:hover { background: var(--k-ac-lit); color: var(--k-on-ac); }
+.md-typeset .k-btn--line {
+  color: var(--k-seq);
+  border-color: color-mix(in srgb, var(--k-seq) 45%, transparent);
+}
+.md-typeset .k-btn--line:hover { border-color: var(--k-seq); }
+
+.md-typeset .k-band { padding: 2.5rem 0; border-top: 1px solid var(--k-line); }
+.md-typeset .k-band__hd {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.md-typeset .k-band__hd h2 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  color: var(--k-ac-lit);
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+.md-typeset .k-band__more {
+  margin-left: auto;
+  font-size: .76rem;
+  color: var(--k-dim);
+  text-decoration: none;
+}
+.md-typeset .k-band__more:hover { color: var(--k-ac-lit); }
+
+/* ─── Responsivo e movimento ─────────────────────────────────────────── */
+@media screen and (max-width: 44.9375em) {
+  .md-typeset ul.k-posts:not([hidden]) { grid-template-columns: 1fr; }
+  [dir="ltr"] .md-typeset .k-steps > li,
+  [dir="rtl"] .md-typeset .k-steps > li { grid-template-columns: 2rem 1fr; }
+  .md-typeset .k-steps__t { display: none; }
+  .md-typeset .k-hero { padding: 2.5rem 0 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .k-card,
+  .md-typeset .k-card__thumb { transition: none; }
 }
