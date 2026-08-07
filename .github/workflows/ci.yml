@@ -1,28 +1,78 @@
-name: ci 
+name: ci
+
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
+
+# Padrão restritivo; o job de deploy eleva para write.
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.13"
+
 jobs:
-  deploy:
+  build:
+    name: build (strict)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # rss-plugin usa timestamps do git como fallback de date.created/updated
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - run: pip install --require-hashes -r requirements.txt
+
+      - name: Build
+        run: mkdocs build --strict
+
+  deploy:
+    name: deploy (gh-pages)
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+
+      # Cache do mkdocs (usado pelo rss-plugin e, se habilitado, social cards)
       - uses: actions/cache@v4
         with:
           key: mkdocs-material-${{ env.cache_id }}
-          path: .cache 
+          path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install -r requirements.txt
+
+      - run: pip install --require-hashes -r requirements.txt
+
       - run: mkdocs gh-deploy --force
