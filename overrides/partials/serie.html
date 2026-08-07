@@ -1,0 +1,27 @@
+{#
+  Uma série. Espera a variável `serie` no contexto:
+    serie.name   — nome declarado no front-matter dos posts
+    serie.posts  — já ordenados por series_index
+
+  A numeração aqui é informação, não enfeite: estes posts são uma sequência
+  de verdade e a ordem importa para quem vai ler.
+#}
+<div class="k-serie">
+  <div class="k-serie__hd">
+    <h3>{{ serie.name }}</h3>
+    <span class="k-serie__count">
+      {{ serie.posts | length }} partes · {{ serie.posts[0].date.year }}
+    </span>
+  </div>
+  <ol class="k-steps">
+    {% for post in serie.posts %}
+      <li>
+        <span class="k-steps__n">{{ "%02d" | format(loop.index0) }}</span>
+        <a href="{{ post.url | url }}">{{ post.title }}</a>
+        {% if post.readtime %}
+          <span class="k-steps__t">{{ post.readtime }} min</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+</div>

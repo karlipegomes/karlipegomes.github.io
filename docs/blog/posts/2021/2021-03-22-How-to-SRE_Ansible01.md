@@ -8,6 +8,8 @@ categories:
   - SRE/DevOps
 tags:
   - ansible
+series: "#HowToSRE"
+series_index: 1
 ---
 
 # **#HowToSRE - Ansible-Parte01**

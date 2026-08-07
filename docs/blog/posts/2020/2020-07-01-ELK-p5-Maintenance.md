@@ -8,6 +8,8 @@ categories:
   - ToolTip
 tags:
   - elk
+series: "#ToolTip — ELK Stack"
+series_index: 4
 ---
 
 

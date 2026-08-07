@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+
+{# Todas as séries. Dados de config.extra.k_series (hooks/blog_data.py). #}
+
+{% block content %}
+<h1>Séries</h1>
+
+{% if config.extra.k_series %}
+  <p>
+    Alguns assuntos não cabem num post só. Estas são as sequências —
+    leia na ordem, cada parte assume a anterior.
+  </p>
+  {% for serie in config.extra.k_series %}
+    {% include "partials/serie.html" %}
+  {% endfor %}
+{% else %}
+  <p>Nenhuma série publicada ainda.</p>
+{% endif %}
+{% endblock %}
