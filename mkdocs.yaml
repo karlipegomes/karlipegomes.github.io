@@ -22,8 +22,8 @@ nav:
 theme:
   name: material
   custom_dir: overrides
-  logo: layouts/ccc.png
-  favicon: layouts/ccc.png
+  logo: layouts/logo.png
+  favicon: layouts/favicon.png
   features:
     - content.code.annotate
     - content.code.annotation
