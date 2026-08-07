@@ -1,0 +1,79 @@
+{% extends "main.html" %}
+
+{#
+  Home. Substitui o antigo docs/index.md, que era HTML cru com meta-refresh
+  para /blog/. Os dados vêm de config.extra.k_posts / k_series, publicados
+  pelo hook hooks/blog_data.py.
+#}
+
+{% block content %}
+<div class="k-home">
+
+  <section class="k-hero">
+    <canvas class="k-hero__mesh" aria-hidden="true" data-k-mesh></canvas>
+    <div class="k-hero__in">
+      <p class="k-eyebrow">
+        {{ config.extra.k_posts | length }} posts · 2020 — {{ config.extra.k_posts[0].date.year }}
+      </p>
+      <h1>Automação, cloud native e <em>o que quebrou no caminho</em>.</h1>
+      <p class="k-hero__lead">
+        Notas de quem opera infraestrutura há 16 anos. Distroless, supply chain,
+        observabilidade e Ansible — com o comando que você roda, não só o conceito.
+      </p>
+      <div class="k-cta">
+        {% if config.extra.k_posts %}
+          <a class="k-btn k-btn--fill" href="{{ config.extra.k_posts[0].url | url }}">
+            Ler o último post
+          </a>
+        {% endif %}
+        {% if config.extra.k_series %}
+          <a class="k-btn k-btn--line" href="{{ 'series/' | url }}">Ver séries</a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <section class="k-band">
+    <div class="k-band__hd">
+      <h2>Últimos posts</h2>
+      <a class="k-band__more" href="{{ 'blog/' | url }}">ver todos →</a>
+    </div>
+    <ul class="k-posts">
+      {% for post in config.extra.k_posts[:4] %}
+        <li class="k-card">
+          {% if post.thumb %}
+            <img class="k-card__thumb" src="{{ post.thumb | url }}" alt="" loading="lazy">
+          {% endif %}
+          <div class="k-card__body">
+            <p class="k-card__meta">
+              {{ post.date_label }}
+              {% if post.readtime %}<span class="k-sep">·</span>{{ post.readtime }} min{% endif %}
+            </p>
+            <h3 class="k-card__title">
+              <a href="{{ post.url | url }}">{{ post.title }}</a>
+            </h3>
+            {% if post.tags %}
+              <p class="k-card__tags">
+                {% for tag in post.tags[:3] %}<span class="k-tag">{{ tag }}</span>{% endfor %}
+              </p>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {% if config.extra.k_series %}
+    <section class="k-band">
+      <div class="k-band__hd">
+        <h2>Séries</h2>
+        <a class="k-band__more" href="{{ 'series/' | url }}">todas as séries →</a>
+      </div>
+      {% for serie in config.extra.k_series[:2] %}
+        {% include "partials/serie.html" %}
+      {% endfor %}
+    </section>
+  {% endif %}
+
+</div>
+{% endblock %}
