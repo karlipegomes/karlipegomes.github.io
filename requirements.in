@@ -7,3 +7,9 @@ mkdocs-glightbox
 mkdocs-material[imaging]
 mkdocs-rss-plugin
 pymdown-extensions
+
+# Pygments 2.20 deixou de aceitar filename=None, que o pymdown-extensions
+# 10.20.1 passa ao HtmlFormatter, e o build quebra com
+# "AttributeError: 'NoneType' object has no attribute 'replace'".
+# Soltar quando o pymdown-extensions publicar correção.
+pygments<2.20
