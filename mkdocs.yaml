@@ -115,6 +115,23 @@ extra:
   analytics:
     provider: google
     property: G-S8Z38MG7BX
+  consent:
+    title: Cookie consent
+    description: >-
+      This site uses Google Analytics to understand which content is useful,
+      and Disqus to power the comments. Neither is loaded until you choose.
+      You can change your decision at any time.
+    cookies:
+      analytics:
+        name: Google Analytics
+        checked: false
+      disqus:
+        name: Disqus (comments)
+        checked: false
+    actions:
+      - accept
+      - manage
+      - reject
   #   feedback:
   #     title: Was this page helpful?
   #     ratings:
@@ -148,6 +165,7 @@ extra_javascript:
   - extras/drawio-reload.js
   - extras/feedback.js
   - extras/glightbox.js
+  - extras/disqus-consent.js
 
 extra_css:
   - extras/extra.css
