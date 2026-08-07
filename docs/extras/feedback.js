@@ -18,6 +18,6 @@ document$.subscribe(function() {
       ".md-feedback__note [data-md-value='" + data + "']"
     )
     if (note)
-      note.hidden = false 
+      note.hidden = false
   })
-}
+})
