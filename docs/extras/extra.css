@@ -9,11 +9,11 @@
 } */
 
 /*-------------------------*/
-/*color as defined on theme*/
-:root > * {
+/* cor primária custom (theme.palette.primary: custom) */
+[data-md-color-primary="custom"] {
   --md-primary-fg-color:        #0CA646;
-  --md-primary-fg-color--light: #ECB7B7;
-  --md-primary-fg-color--dark:  #90030C;
+  --md-primary-fg-color--light: #3DBF6B;
+  --md-primary-fg-color--dark:  #087A34;
 }
 
 /*-------------------------*/

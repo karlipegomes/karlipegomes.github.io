@@ -42,17 +42,18 @@ theme:
     - toc.follow
   language: en
   palette:
+    # Paleta ativa por padrão (escura); o toggle leva para a clara.
     - scheme: slate
       toggle:
         icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
-      primary: "#0CA646"
+        name: Switch to light mode
+      primary: custom
       accent: yellow
     - scheme: default
       toggle:
         icon: material/toggle-switch
-        name: Switch to light mode
-      primary: "#0CA646"
+        name: Switch to dark mode
+      primary: custom
       accent: red
 
 markdown_extensions:
