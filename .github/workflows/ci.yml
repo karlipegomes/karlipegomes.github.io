@@ -24,12 +24,12 @@ jobs:
     name: build (strict)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # rss-plugin usa timestamps do git como fallback de date.created/updated
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
@@ -48,7 +48,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -57,7 +57,7 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
@@ -66,7 +66,7 @@ jobs:
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
 
       # Cache do mkdocs (usado pelo rss-plugin e, se habilitado, social cards)
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
