@@ -2,8 +2,11 @@ site_description: DevOps tips and useful knowledge
 site_name: Karlipe Gomes
 site_url: https://karlipegomes.github.io
 nav:
+  - Home: index.md
   - Blog:
     - blog/index.md
+    - Séries: series.md
+    - Tags: tags.md
   # - HomeLab:
   #   - Environment:
   #     - Module-ESC-Cluster: distroless/bdc-images/custom-packages.md
@@ -22,6 +25,8 @@ nav:
 theme:
   name: material
   custom_dir: overrides
+  # fontes auto-hospedadas em docs/assets/ — nenhuma requisição ao Google
+  font: false
   logo: layouts/logo.png
   favicon: layouts/favicon.png
   features:
@@ -36,6 +41,8 @@ theme:
     - navigation.sections
     - navigation.tabs
     - navigation.top
+    - navigation.footer
+    - content.tooltips
     - search.highlight
     - search.suggest
     - search.share
@@ -48,13 +55,13 @@ theme:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
       primary: custom
-      accent: yellow
+      accent: custom
     - scheme: default
       toggle:
         icon: material/toggle-switch
         name: Switch to dark mode
       primary: custom
-      accent: red
+      accent: custom
 
 markdown_extensions:
   - admonition
@@ -75,6 +82,9 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+
+hooks:
+  - hooks/blog_data.py
 
 plugins:
   - drawio
@@ -98,6 +108,8 @@ plugins:
           normalize: NFKD
       post_slugify_separator: _
       post_url_format: "{date}/{slug}"
+      post_readtime: true
+      post_readtime_words_per_minute: 200
   - meta:
       meta_file: .meta.yml
   - rss:
@@ -169,8 +181,10 @@ extra_javascript:
   - extras/feedback.js
   - extras/glightbox.js
   - extras/disqus-consent.js
+  - extras/hero-mesh.js
 
 extra_css:
+  - assets/fonts.css
   - extras/extra.css
   - https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css
 
