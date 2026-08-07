@@ -94,6 +94,8 @@ plugins:
       post_slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
+          # Remove acentos do slug: "próprios" -> "proprios"
+          normalize: NFKD
       post_slugify_separator: _
       post_url_format: "{date}/{slug}"
   - meta:
