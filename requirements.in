@@ -1,0 +1,9 @@
+# Dependências diretas do site (top-level).
+# O lockfile requirements.txt é gerado a partir deste arquivo:
+#   uv pip compile requirements.in -o requirements.txt --python-version 3.13
+mkdocs
+mkdocs-drawio
+mkdocs-glightbox
+mkdocs-material[imaging]
+mkdocs-rss-plugin
+pymdown-extensions
