@@ -8,6 +8,7 @@ metadata:
   description: "karlipegomes.github.io (karlipegomes)"
   annotations:
     github.com/project-slug: karlipegomes/karlipegomes.github.io
+  tags: [mkdocs, mkdocs-material, python, github-pages, blog]
   links:
     - url: https://github.com/karlipegomes/karlipegomes.github.io
       title: Repository
@@ -24,7 +25,7 @@ metadata:
   description: "karlipegomes.github.io (karlipegomes)"
   annotations:
     github.com/project-slug: karlipegomes/karlipegomes.github.io
-  tags: [python]
+  tags: [python, mkdocs]
 spec:
   type: website
   lifecycle: production
